@@ -37,11 +37,12 @@ Phân tích:
 
 Đây là lấy tập giá trị khả dĩ cho mỗi biến tại mỗi điểm, ý tưởng cơ bản của Dataflow Analysis.
 
+
 ## 2. Minh họa ý tưởng phân tích mã nguồn chương trình sử dụng kỹ thuật CFG
 
 
 ## 3. Minh họa các thuật cấp phát bộ nhớ và giải phóng bộ nhớ
-Trong C#, bộ nhớ cho objects được cấp phát trên heap và garbage collector tự động giải phóng.
+Trong Go, cấp phát bộ nhớ bằng new() hoặc &struct{}. Go có garbage collector, không cần free thủ công.
 ```go
 package main
 
@@ -63,13 +64,9 @@ func main() {
 }
 
 ```
-Ý tưởng:
-- new MyClass() cấp phát heap
-- obj = null làm object không còn tham chiếu → GC sẽ giải phóng
 
 
 ## 4. Minh họa ý tưởng sử dụng và giải phóng pointer
-Trong C#, pointer chỉ dùng được trong unsafe context:
 
 ```go
 package main
@@ -89,5 +86,5 @@ func main() {
 ```
 
 Chú ý:
-- Cần bật unsafe trong project
-- Bộ nhớ stack tự động giải phóng khi thoát scope
+- Go không cho pointer arithmetic
+- Stack/heap được Go tự quyết
