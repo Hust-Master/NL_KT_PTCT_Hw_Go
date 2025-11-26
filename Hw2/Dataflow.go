@@ -1,16 +1,26 @@
-package main
-
-import "fmt"
+package hw2
 
 func Dataflow() {
-	x := 0 // Dòng 1
-	y := 5 // Dòng 2
+	// Câu lệnh 1: Định nghĩa cho biến 'x'
+	x := 1
+	// Câu lệnh 2: Định nghĩa cho biến 'y'
+	y := 2
 
-	if y > 3 { // Dòng 3
-		x = y + 1 // Dòng 4
+	if x > 0 { // Câu lệnh 3: Điều kiện
+		// Câu lệnh 4: Định nghĩa mới cho 'y'
+		y = 3
 	} else {
-		x = y - 1 // Dòng 5
+		// Câu lệnh 5: Định nghĩa mới cho 'x'
+		x = 5
 	}
 
-	fmt.Println(x) // Dòng 6
+	// Câu lệnh 6: Sử dụng 'x' và 'y'
+	z := x + y
+
+	// Câu lệnh 7: Định nghĩa mới cho 'x'
+	x = 10
+
+	// Câu lệnh 8: Sử dụng 'x'
+	println(z) // Sử dụng 'z'
+	println(x) // Sử dụng 'x'
 }

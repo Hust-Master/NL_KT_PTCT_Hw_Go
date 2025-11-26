@@ -1,3 +1,3 @@
-module hust/hw
+module hw
 
 go 1.25.4
